@@ -19,4 +19,4 @@ jobs:
       - name: Create account for testing
         shell: pwsh
         run: |
-          $storageDetails = az storage account create --name foobar --sku Standard_LRS | ConvertFrom-Json
+          $storageDetails = az storage account create --name foobar --location West Europe --resource-group servicebusplayground --sku Standard_LRS | ConvertFrom-Json
