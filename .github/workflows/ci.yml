@@ -19,4 +19,6 @@ jobs:
       - name: Create account for testing
         shell: pwsh
         run: |
-          $storageDetails = az storage account create --name foobar --location westeurope --resource-group servicebusplayground --sku Standard_LRS | ConvertFrom-Json
+          $randomNumber = Get-Random
+          $storageAccountName = "foobar$randomNumber"
+          $storageDetails = az storage account create --name $storageAccountName --location westeurope --resource-group servicebusplayground --sku Standard_LRS | ConvertFrom-Json
